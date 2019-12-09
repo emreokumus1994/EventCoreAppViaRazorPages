@@ -1,0 +1,64 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Current Events";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome to Event Book </h1>
+    <p>Upcoming Events On Turkey</p>
+</div>
+
+
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Event[0].EventName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Event[0].EventDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Event[0].Genre)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Event[0].Price)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Event[0].Rating)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Event[0].Country)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.Event)
+        {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.EventName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EventDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Genre)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Price)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Rating)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Country)
+            </td>
+        </tr>
+        }
+    </tbody>
+</table>
